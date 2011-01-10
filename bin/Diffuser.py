@@ -7,5 +7,5 @@ from tweetdiffuser import TweetDiffuser
 
 config_file = sys.argv[1]
 diffuser = TweetDiffuser(config_file)
-print diffuser.oauth()
-#diffuser.diffuse()
+diffuser.oauth()
+diffuser.diffuse()
