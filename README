@@ -1,3 +1,9 @@
+- 概要
+TwitterのDMをメーリングリストのように操作するbotプログラムです。
+botが1つのメーリングリストのイメージです。
+botは受信したDMの内容をメンバー全員へDMとして送信します。
+
+
 - インストール
 tweetdiffuserディレクトリを設置するだけです。
 依存ライブラリはvender配下にあるのでeasy_installなどは使用しないで大丈夫です。
@@ -13,6 +19,7 @@ tweetdiffuserディレクトリを設置するだけです。
 - 使い方
 bin/Diffuser.py に引数として設定ファイルを渡して実行します。
 例 python bin/Diffuser.py conf/template.conf
+cronとして定期実行してください。
 
 
 - 動作内容
