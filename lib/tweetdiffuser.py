@@ -28,7 +28,7 @@ class TweetDiffuser:
         return True
 
     def diffuse(self):
-        latest_id = self.db.get_latest_row().id
+        latest_id = self.db.get_latest_row().id if self.db.get_latest_row() else 0
         dm_list = self.api.direct_messages(since_id=latest_id)
         for dm in dm_list:
             tweet_str = TweetString(dm.text)
@@ -102,6 +102,7 @@ class TweetDB:
 
     def get_latest_row(self):
         current_id = 0
+        if len(self.rows) == 0: return None
         latest_row = self.rows[0]
         for row in self.rows:
             if int(row.id) > int(current_id):

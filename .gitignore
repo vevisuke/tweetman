@@ -1,5 +1,6 @@
 *.pyc
 tmp/
 db/pytwitman.db
+db/monjajp.db
 conf/pytwitman.conf
 conf/monjajp.conf
