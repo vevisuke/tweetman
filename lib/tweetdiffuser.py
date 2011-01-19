@@ -7,6 +7,8 @@ import csv
 import ConfigParser
 import tweepy
 
+__version__ = '0.0.1'
+
 class TweetDiffuser:
     def __init__(self, config_file):
         self.config = Config(config_file).parse()
