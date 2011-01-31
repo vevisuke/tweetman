@@ -19,7 +19,7 @@ class DB:
 
     def write_row(self, id, user, text):
         writer = csv.writer(open(self.file,'a'), self.dialect, lineterminator=self.lineterminator)
-        writer.writerow([id, user, text])
+        writer.writerow([id, user, text.encode('utf-8')])
         return self
 
     def get_latest_row(self):
