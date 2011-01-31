@@ -6,12 +6,16 @@ from tweetman.fdb import DB
 
 class Agent:
     def __init__(self, config_file):
-        self.config = Config(config_file).parse()
-        self.db = DB(self.config.db).load()
+        self.config = Config(config_file)
+        self.db = DB(self.config.get('global','db')).load()
 
     def oauth(self):
-        auth = tweepy.OAuthHandler(self.config.consumer_key, self.config.consumer_secret)
-        auth.set_access_token(self.config.access_key, self.config.access_secret)
+        consumer_key = self.config.get('oauth', 'consumer_key')
+        consumer_secret = self.config.get('oauth', 'consumer_secret')
+        access_key = self.config.get('oauth', 'access_key')
+        access_secret = self.config.get('oauth', 'access_secret')
+        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+        auth.set_access_token(access_key, access_secret)
         self.api = tweepy.API(auth_handler=auth)
         return self
 
