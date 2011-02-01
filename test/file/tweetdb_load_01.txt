@@ -1,2 +1,0 @@
-1111	exampleid	This is sample tweet.
-2222	exampleid2	This is 日本語 tweet.
