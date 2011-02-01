@@ -55,19 +55,3 @@ class DirectMessage:
     def create_cc_direct_message_notice(self, dm_user_list):
         message =  ' '.join(dm_user_list) + u'に以下のDMを送信しました。' + self.text
         return self.get_140str(message)
-
-
-class Message:
-    def __init__(self, str):
-        self.original_tweet = str
-
-    def get_140str(self, string):
-        return string[0:139]
-
-    def create_cc_direct_message(self, from_user_name):
-        message = '[from ' + from_user_name +  '] ' + self.original_tweet
-        return self.get_140str(message)
-
-    def create_cc_direct_message_notice(self, dm_user_list):
-        message =  ' '.join(dm_user_list) + u'に以下のDMを送信しました。' + self.original_tweet
-        return self.get_140str(message)
