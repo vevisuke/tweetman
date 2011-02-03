@@ -9,11 +9,22 @@ tweetmanディレクトリを設置するだけです。
 依存ライブラリはvender配下にあるのでeasy_installなどは使用しないで大丈夫です。
 
 
+- OAuth
+1: bot用のアカウントを取得します。botは専用のアカウントを取得するのをオススメします。
+2: http://twitter.com/apps/new にアクセスしread-writeアプリケーションの登録を行います。
+3: consumer key と consumer secret を利用するので覚えておきます。
+4: python bin/get_access_token.py を実行します。
+5: consumer keyとconsumer secretを応答入力します。
+6: リダイレクトURLが表示されるのでアクセスし、PINコードを取得します。
+7: PINコードを応答入力します。
+8: 表示される access key と access secret を利用するので覚えます。
+
+
 - 事前準備
-1: TwitterのAPIkeyを取得します
+1: TwitterのAPIkeyを取得します。上記のOAuthを参照してください。
 2: conf/template.confを元にしてAPIkeyの内容を設定ファイルに記述します
 3: 設定ファイルにdbファイルのパスを記述します
-4: 設定ファイルにDMを拡散通知させたいユーザーIDを記述します
+4: 設定ファイルにDMを拡散通知させたいユーザーのIDを記述します
 
 
 - 使い方
