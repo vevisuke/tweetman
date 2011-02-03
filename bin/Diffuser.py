@@ -3,9 +3,9 @@
 import sys
 from optparse import OptionParser
 
-sys.path.append('lib/')
-sys.path.append('vender/tweepy/')
-from tweetdiffuser import TweetDiffuser
+sys.path.append('src/')
+sys.path.append('src/vender/tweepy/')
+from tweetman.diffuser import Diffuser
 
 parser = OptionParser()
 parser.add_option("-c", "--config", dest="configfile",
@@ -14,6 +14,6 @@ parser.add_option("-c", "--config", dest="configfile",
 
 if options.configfile is None: sys.exit(1)
 
-diffuser = TweetDiffuser(options.configfile)
+diffuser = Diffuser(options.configfile)
 diffuser.oauth()
 diffuser.diffuse()
