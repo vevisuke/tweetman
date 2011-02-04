@@ -1,4 +1,7 @@
 # -*- coding=utf-8 -*-
+# Tweetman
+# Copyright 2011 vevisuke<vevisuke@gmail.com>
+# See LICENSE for details.
 
 import ConfigParser
 import tweepy
