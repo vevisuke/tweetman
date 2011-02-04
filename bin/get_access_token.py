@@ -11,7 +11,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 print "Please access and get verifier code."
 print auth.get_authorization_url()
 
-verifier = raw_input("Verifier: ")
+verifier = raw_input("Verifier:")
 auth.get_access_token(verifier)
 
 access_key = auth.access_token.key
